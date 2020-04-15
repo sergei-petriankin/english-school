@@ -13,7 +13,15 @@ public class StudentService {
 
     StudentRepository studentRepository;
 
+    public Student save(Student student) {
+        return studentRepository.save(student);
+    }
+
     public List<Student> findAll() {
         return studentRepository.findAll();
+    }
+
+    public void delete(Student student) {
+        studentRepository.delete(student);
     }
 }
