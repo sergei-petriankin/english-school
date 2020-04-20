@@ -21,8 +21,12 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public List<Student> findAll() {
-        return studentRepository.findAll();
+    public List<Student> findAll(String stringFilter) {
+        if (stringFilter == null || stringFilter.isEmpty()) {
+            return studentRepository.findAll();
+        } else {
+            return studentRepository.search(stringFilter);
+        }
     }
 
     public void delete(Student student) {
