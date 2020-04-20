@@ -1,9 +1,14 @@
 package com.family.backend.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
 public class Student extends AbstractEntity {
 
     private String firstName;
