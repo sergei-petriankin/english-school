@@ -1,10 +1,16 @@
 package com.family.backend.entity;
 
+import com.family.backend.enums.EducationLocation;
+import com.family.backend.enums.EducationType;
+import com.family.backend.enums.StudentStatus;
+import com.family.backend.enums.StudentType;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,7 +24,7 @@ public class Student extends AbstractEntity {
     private String phoneNumber;
     private String email;
     // TODO: 15.04.2020 provide few options
-    private String socialNetworkLink;
+    private Set<String> socialNetworkLinks;
     // TODO: 15.04.2020 parents
     private String additionalContact;
     private String address;
@@ -30,17 +36,8 @@ public class Student extends AbstractEntity {
     private StudentType studentType;
     private EducationType educationType;
     private EducationLocation educationLocation;
+    private StudentStatus status;
 
-    public enum StudentType {
-        ADULT, CHILD, CORPORATE;
-    }
-
-    public enum EducationType {
-        INDIVIDUAL, GROUP;
-    }
-
-    public enum EducationLocation {
-        AUDITORIUM, CLIENT_SIDE;
-    }
-
+    @ManyToMany
+    private Set<Group> groups;
 }

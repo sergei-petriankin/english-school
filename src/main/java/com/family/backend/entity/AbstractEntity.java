@@ -1,6 +1,8 @@
 package com.family.backend.entity;
 
 
+import lombok.Getter;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,12 +12,9 @@ import javax.persistence.MappedSuperclass;
 public abstract class AbstractEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Getter
     private Long id;
-
-    public Long getId() {
-        return id;
-    }
 
     public boolean isPersisted() {
         return id != null;
