@@ -1,6 +1,7 @@
 package com.family.backend.service;
 
 import com.family.backend.entity.Student;
+import com.family.backend.enums.EducationType;
 import com.family.backend.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -45,8 +46,7 @@ public class StudentService {
                                 Student student = new Student();
                                 student.setFirstName(split[0]);
                                 student.setLastName(split[1]);
-                                student.setEducationType(Student.EducationType.values()[r.nextInt(Student
-                                        .EducationType.values().length)]);
+                                student.setEducationType(EducationType.values()[r.nextInt(EducationType.values().length)]);
                                 return student;
                             }).collect(Collectors.toList()));
         }
