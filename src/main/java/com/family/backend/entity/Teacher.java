@@ -1,10 +1,7 @@
 package com.family.backend.entity;
 
-import com.family.backend.enums.Language;
-
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import java.util.Set;
 
@@ -19,7 +16,7 @@ public class Teacher extends AbstractEntity {
 
     private String phoneNumber;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToMany
     private Set<Language> languages;
 
     @OneToMany

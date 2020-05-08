@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -23,8 +24,9 @@ public class Student extends AbstractEntity {
     private LocalDate dateOfBirth;
     private String phoneNumber;
     private String email;
-    // TODO: 15.04.2020 provide few options
-    private Set<String> socialNetworkLinks;
+
+    @OneToMany
+    private Set<SocialNetworkLink> socialNetworkLinks;
     // TODO: 15.04.2020 parents
     private String additionalContact;
     private String address;
