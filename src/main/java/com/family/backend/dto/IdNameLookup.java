@@ -1,8 +1,10 @@
 package com.family.backend.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor
+@Getter
 public class IdNameLookup {
     Long id;
     String name;
