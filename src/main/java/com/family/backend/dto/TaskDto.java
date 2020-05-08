@@ -1,16 +1,13 @@
-package com.family.backend.entity;
+package com.family.backend.dto;
 
 import com.family.backend.enums.Priority;
 import com.family.backend.enums.TaskStatus;
-import lombok.Getter;
+import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
-@Entity
-@Getter
-public class Task extends AbstractEntity {
+@Data
+public class TaskDto {
 
     private String name;
 
@@ -20,8 +17,7 @@ public class Task extends AbstractEntity {
 
     private Priority priority;
 
-    @ManyToOne
-    private Employee responsibleEmployee;
+    private IdNameLookup responsibleEmployee;
 
     private TaskStatus status;
 }
