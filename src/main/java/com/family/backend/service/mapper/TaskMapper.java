@@ -6,7 +6,7 @@ import com.family.backend.entity.Employee;
 import com.family.backend.entity.Task;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface TaskMapper {
 
     TaskDto toDto(Task entity);

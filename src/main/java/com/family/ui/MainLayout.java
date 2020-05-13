@@ -1,6 +1,7 @@
 package com.family.ui;
 
-import com.family.ui.view.list.StudentsView;
+//import com.family.ui.view.list.StudentsView;
+import com.family.ui.view.list.CrudWithFilterView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.dependency.CssImport;
@@ -33,7 +34,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void createDrawer() {
-        RouterLink listLink = new RouterLink("Students", StudentsView.class);
+        RouterLink listLink = new RouterLink("Students", CrudWithFilterView.class);
 
         listLink.setHighlightCondition(HighlightConditions.sameLocation());
 

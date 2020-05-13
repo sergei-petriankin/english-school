@@ -16,4 +16,8 @@ public class Employee extends AbstractEntity {
     public IdNameLookup toIdName() {
         return IdNameLookup.of(this.getId(), String.format("%s %s %s", firstName, middleName, lastName));
     }
+
+    public String getFullName() {
+        return String.format("%s %s %s", firstName, middleName, lastName);
+    }
 }

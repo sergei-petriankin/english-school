@@ -6,19 +6,22 @@ import com.family.backend.repository.TaskRepository;
 import com.family.backend.service.TaskService;
 import com.family.backend.service.mapper.TaskMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RequiredArgsConstructor
+@Service
 public class TaskServiceImpl implements TaskService {
 
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
 
     @Override
-    public Task save(TaskDto taskDto) {
-        return taskRepository.save(taskMapper.toEntity(taskDto));
+    public TaskDto save(TaskDto taskDto) {
+        Task task = taskMapper.toEntity(taskDto);
+        return taskMapper.toDto(taskRepository.save(task));
     }
 
     @Override
